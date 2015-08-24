@@ -26,7 +26,7 @@ Game.prototype.play = function(playerOne, playerTwo) {
 	if (playerOne === playerTwo) {
 		return "Draw";
 	}
-	else if (playerTwo === this.winningCombos[playerTwo]) {
+	else if (this.winningCombos[playerOne] === playerTwo) {
 		return "Player One Wins";
 	}
 	else {

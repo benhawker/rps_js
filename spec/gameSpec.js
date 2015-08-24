@@ -38,23 +38,23 @@ describe("Game", function () {
     });
 
     it("Rock vs Scissors", function() {
-      expect(game.play("Rock", "Paper")).toEqual("Player One Wins");
+      expect(game.play("Rock", "Scissors")).toEqual("Player One Wins");
     });
 
     it("Paper vs Rock", function() {
-      expect(game.play("Rock", "Paper")).toEqual("Player One Wins");
+      expect(game.play("Paper", "Rock")).toEqual("Player One Wins");
     });
 
     it("Paper vs Scissors", function() {
-      expect(game.play("Rock", "Paper")).toEqual("Player Two Wins");
+      expect(game.play("Paper", "Scissors")).toEqual("Player Two Wins");
     });
 
     it("Scissors vs Rock", function() {
-      expect(game.play("Rock", "Paper")).toEqual("Player Two Wins");
+      expect(game.play("Scissors", "Rock")).toEqual("Player Two Wins");
     });
 
     it("Scissors vs Paper", function() {
-      expect(game.play("Rock", "Paper")).toEqual("Player One Wins");
+      expect(game.play("Scissors", "Paper")).toEqual("Player One Wins");
     });
 
   });
