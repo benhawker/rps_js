@@ -20,6 +20,14 @@ describe("Game", function () {
     });
   });
 
+  describe("2nd player default", function() {
+    it("defaults to computer player if no second arg is given", function() {
+      spyOn(game, "randomSelection").and.returnValue("Rock");
+      expect(game.play("Rock")).toEqual("Draw");
+    });
+  });
+
+
   describe("potential game results", function() {
     it("returns a draw if both players choose rock", function() {
       expect(game.play("Rock", "Rock")).toEqual("Draw");

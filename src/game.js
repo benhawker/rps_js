@@ -1,5 +1,6 @@
 function Game() {
 	this.options = ["Rock", "Paper", "Scissors"];
+
 	this.winningCombos = {"Rock" : "Scissors", 
 												"Paper" : "Rock", 
 												"Scissors" : "Paper"}; 
@@ -23,6 +24,10 @@ Game.prototype.makeChoice = function(choice) {
 
 
 Game.prototype.play = function(playerOne, playerTwo) {
+	if (playerTwo === undefined) {
+		playerTwo = this.randomSelection();
+	};
+
 	if (playerOne === playerTwo) {
 		return "Draw";
 	}
