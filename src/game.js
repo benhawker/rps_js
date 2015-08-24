@@ -1,6 +1,8 @@
 function Game() {
 	this.options = ["Rock", "Paper", "Scissors"];
-	this.chosen = {};
+	this.winningCombos = {"Rock" : "Scissors", 
+												"Paper" : "Rock", 
+												"Scissors" : "Paper"}; 
 	this.playerOneChoice = "";
 	// this.playerTwoChoice = "";
 	this.playerOneCount = 0;
@@ -22,7 +24,13 @@ Game.prototype.makeChoice = function(choice) {
 
 Game.prototype.play = function(playerOne, playerTwo) {
 	if (playerOne === playerTwo) {
-		return "Draw"
+		return "Draw";
+	}
+	else if (playerTwo === this.winningCombos[playerTwo]) {
+		return "Player One Wins";
+	}
+	else {
+		return "Player Two Wins";
 	}
 };
 

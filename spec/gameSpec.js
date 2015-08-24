@@ -24,6 +24,39 @@ describe("Game", function () {
     it("returns a draw if both players choose rock", function() {
       expect(game.play("Rock", "Rock")).toEqual("Draw");
     });
+
+    it("returns a draw if both players choose paper", function() {
+      expect(game.play("Paper", "Paper")).toEqual("Draw");
+    });
+
+    it("returns a draw if both players choose scissors", function() {
+      expect(game.play("Scissors", "Scissors")).toEqual("Draw");
+    });
+
+    it("Rock vs Paper", function() {
+      expect(game.play("Rock", "Paper")).toEqual("Player Two Wins");
+    });
+
+    it("Rock vs Scissors", function() {
+      expect(game.play("Rock", "Paper")).toEqual("Player One Wins");
+    });
+
+    it("Paper vs Rock", function() {
+      expect(game.play("Rock", "Paper")).toEqual("Player One Wins");
+    });
+
+    it("Paper vs Scissors", function() {
+      expect(game.play("Rock", "Paper")).toEqual("Player Two Wins");
+    });
+
+    it("Scissors vs Rock", function() {
+      expect(game.play("Rock", "Paper")).toEqual("Player Two Wins");
+    });
+
+    it("Scissors vs Paper", function() {
+      expect(game.play("Rock", "Paper")).toEqual("Player One Wins");
+    });
+
   });
 
 });
